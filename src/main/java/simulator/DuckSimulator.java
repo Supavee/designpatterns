@@ -1,6 +1,8 @@
 package simulator;
 
+import pigeon.Pigeon;
 import adapter.GooseAdapter;
+import adapter.PigeonAdapter;
 import ducks.DuckCall;
 import ducks.MallardDuck;
 import ducks.RedheadDuck;
@@ -19,6 +21,7 @@ public class DuckSimulator {
         Quackable duckCall = new DuckCall();
         Quackable rubberDuck = new RubberDuck();
         Quackable gooseDuck = new GooseAdapter(new Goose());
+        Quackable pigeonCall = new PigeonAdapter(new Pigeon());
 
         System.out.println("\nDuck Simulator: With Goose Adapter");
 
@@ -27,6 +30,7 @@ public class DuckSimulator {
         simulate(duckCall);
         simulate(rubberDuck);
         simulate(gooseDuck);
+        simulate(pigeonCall);
     }
     void simulate(Quackable duck) {
         duck.quack();
